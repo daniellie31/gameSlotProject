@@ -18,8 +18,11 @@ class CreateGamesTable extends Migration
             $table->unsignedBigInteger('GenreId');
             $table->string('GameTitle', 255);
             $table->string('GameImage', 255);
+            $table->longText('GameDesc');
+            $table->integer('GamePrice');
+            $table->integer('GamePegiRating');
             $table->timestamps();
-            $table->foreign('GenreId')->references('GenreId')->on('genres');
+            $table->foreign('GenreId')->references('GenreId')->on('genres')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

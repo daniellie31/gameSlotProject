@@ -19,9 +19,9 @@ class CreateCartsTable extends Migration
             $table->integer('Qty');
             $table->timestamps();
 
-            // $table->primary(['UserId', 'GameId']);
-            $table->foreign('UserId')->references('UserId')->on('users');
-            $table->foreign('GameId')->references('GameId')->on('games');
+            $table->primary(['UserId', 'GameId']);
+            $table->foreign('UserId')->references('UserId')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('GameId')->references('GameId')->on('games')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

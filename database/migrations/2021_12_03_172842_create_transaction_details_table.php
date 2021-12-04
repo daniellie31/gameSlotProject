@@ -21,8 +21,8 @@ class CreateTransactionDetailsTable extends Migration
             $table->timestamps();
 
             $table->primary(['TransactionId', 'GameId']);
-            $table->foreign('TransactionId')->references('TransactionId')->on('transactions');
-            $table->foreign('GameId')->references('GameId')->on('games');
+            $table->foreign('TransactionId')->references('TransactionId')->on('transactions')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('GameId')->references('GameId')->on('games')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
