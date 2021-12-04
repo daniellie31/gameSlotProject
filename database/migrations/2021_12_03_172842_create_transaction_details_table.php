@@ -14,12 +14,15 @@ class CreateTransactionDetailsTable extends Migration
     public function up()
     {
         Schema::create('transaction_details', function (Blueprint $table) {
-            $table->unsignedBigInteger('TransactionDetailsId', 20);
+            // $table->unsignedBigInteger('TransactionDetailsId', 20);
             $table->unsignedBigInteger('TransactionId');
             $table->unsignedBigInteger('GameId');
             $table->integer('Qty');
             $table->timestamps();
+
+            $table->primary(['TransactionId', 'GameId']);
             $table->foreign('TransactionId')->references('TransactionId')->on('transactions');
+            $table->foreign('GameId')->references('GameId')->on('games');
         });
     }
 

@@ -15,7 +15,6 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->unsignedBigInteger('UserId', 20);
-            $table->unsignedBigInteger('UserCategoryId');
             $table->string('UserName');
             $table->string('UserEmail');
             // $table->timestamp('email_verified_at')->nullable();
@@ -24,7 +23,6 @@ class CreateUsersTable extends Migration
             $table->date('UserDOB');
             // $table->rememberToken();
             $table->timestamps();
-            $table->foreign('UserCategoryId')->references('UserCategoryId')->on('user_categories');
         });
     }
 

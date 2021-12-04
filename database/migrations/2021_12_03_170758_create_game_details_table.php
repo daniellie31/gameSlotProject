@@ -15,12 +15,13 @@ class CreateGameDetailsTable extends Migration
     {
         Schema::create('game_details', function (Blueprint $table) {
             $table->unsignedBigInteger('GameId');
-            $table->unsignedBigInteger('GameDetailsId', 20);
+            $table->unsignedBigInteger('GameDetailsId');
             $table->longText('GameDesc');
             $table->integer('GamePrice');
             $table->integer('GamePegiRating');
             $table->timestamps();
             $table->foreign('GameId')->references('GameId')->on('games');
+            $table->primary(['GameId', 'GameDetailsId']);
         });
     }
 
