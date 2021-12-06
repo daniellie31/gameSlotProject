@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class GenreController extends Controller
 {
     public function showAllGameGenre(){
-        $genre = Genre::all();
-        return view('addGame', compact('genre'));
+        $genres = Genre::all();
+        return view('addGame', compact('genres'));
     }
 }

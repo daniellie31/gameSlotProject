@@ -1,11 +1,24 @@
-.signin{
-    margin:auto;
-    border:1px groove black;
-    width: 30%;
-    padding: 25px;
-    background-color: white;
+.form-signin {
+    width: 100%;
+    max-width: 420px;
+    padding: 42px;
+    margin: 60px auto;
+    /* background-color: green; */
 }
 
-.bsignin{
-    background-color: #eff0ed;
+*, ::after, ::before {
+    box-sizing: border-box;
 }
+
+.text-center {
+    text-align: center!important;
+}
+.sign-in-header{
+    text-align: center;
+    margin: 60px;
+}
+
+.form-control{
+    margin-bottom: 8px;
+}
+

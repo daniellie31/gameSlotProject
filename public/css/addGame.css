@@ -3,10 +3,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 100px;
+    padding: 40px;
 }
 
 .form-container{
     /* background-color: blue; */
-    width: 800px;
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
 }

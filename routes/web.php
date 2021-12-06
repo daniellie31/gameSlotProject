@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\GenreController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,11 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout');
-});
+Route::get('/home', [GameController::class, 'showGames']);
 
 Route::get('/signIn',function(){
     return view('signIn');
 });
+
+Route::get('/signUp',function(){
+    return view('signUp');
+});
+
 Route::get('/addGame', [GenreController::class, 'showAllGameGenre']);

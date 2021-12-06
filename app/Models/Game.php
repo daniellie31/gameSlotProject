@@ -9,8 +9,8 @@ class Game extends Model
 {
     use HasFactory;
 
-    public function genre(){
-        return $this->belongsTo(Genre::class, 'GenreId');
+    public function genres(){
+        return $this->belongsTo(Genre::class, 'GenreId', 'GenreId');
     }
 
     public function transactionDetails(){
