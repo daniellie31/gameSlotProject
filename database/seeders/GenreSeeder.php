@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class GenreSeeder extends Seeder
 {
@@ -13,6 +14,14 @@ class GenreSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('genres')->insert([
+            'GameGenre' => 'FPS'
+        ]);
+        DB::table('genres')->insert([
+            'GameGenre' => 'Sports'
+        ]);
+        DB::table('genres')->insert([
+            'GameGenre' => 'Racing'
+        ]);
     }
 }
