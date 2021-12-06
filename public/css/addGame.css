@@ -1,0 +1,12 @@
+.addGame-container{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px;
+}
+
+.form-container{
+    /* background-color: blue; */
+    width: 800px;
+}

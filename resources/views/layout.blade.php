@@ -22,7 +22,7 @@
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     </form>
                 </ul>
-                <a href="/signIn"><button type="submit" class="btn btn-primary mr-2">Sign in</button></a> 
+                <a href="/signIn"><button type="submit" class="btn btn-primary mr-2">Sign in</button></a>
                 <button type="submit" class="btn btn-outline-primary">Sign up</button>
                 {{-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> --}}
             </div>
@@ -33,7 +33,7 @@
         @yield('content')
     </main>
 
-    <footer class="footer">
+    <footer class="footer navbar-light bg-light">
         <div class="container text-center py-3">
             <span class="text-muted">&copy 2021 SL, Inc. All rights reserved.</span>
         </div>
