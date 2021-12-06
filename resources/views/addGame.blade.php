@@ -5,7 +5,7 @@
 
 <div class="addGame-container">
     <div class="form-container">
-        <h4 class="font-weight-bold">Add Game</h4>
+        <h2 class="font-weight-bold">Add Game</h2>
         <form action="/addGame" method="post" enctype="multipart/form-data">
             @csrf
             <table class="table table-borderless">
@@ -30,7 +30,7 @@
                     {{-- <td><input type="text" name="title" id="" placeholder="Input Title"></td> --}}
                     <td>
                         <select id="genre-option" style="width: 100%">
-                            @foreach ($genre as $g)
+                            @foreach ($genres as $g)
                                 <option value="{{$g->GenreId}}">{{$g->GameGenre}}</option>
                             @endforeach
                         </select>
