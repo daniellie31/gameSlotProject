@@ -33,7 +33,7 @@
         @yield('content')
     </main>
 
-    <footer class="footer navbar-light bg-light" style="bottom:0;">
+    <footer class="footer navbar-light bg-light">
         <div class="container text-center py-3">
             <span class="text-muted">&copy 2021 SL, Inc. All rights reserved.</span>
         </div>
