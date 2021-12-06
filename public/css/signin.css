@@ -1,11 +1,11 @@
 .signin{
     margin:auto;
     border:1px groove black;
-    width: 25%;
+    width: 30%;
     padding: 25px;
     background-color: white;
 }
 
 .bsignin{
-    background-color: lightgray;
+    background-color: #eff0ed;
 }
