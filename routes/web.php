@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', [GameController::class, 'showGames']);
+Route::get('/', [GameController::class, 'showGames']);
 
 Route::get('/signIn',function(){
     return view('signIn');

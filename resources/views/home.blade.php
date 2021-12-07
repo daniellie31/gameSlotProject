@@ -20,7 +20,7 @@
                                 <p class="card-text genre-color">{{$g->genres->GameGenre}}</p>
                             </span>
                         </div>
-                        <p class="card-text text-center">Rp.{{$g->GamePrice}}</p>
+                        <p class="card-text text-center">${{$g->GamePrice}}</p>
                     </div>
                 </div>
             </div>
