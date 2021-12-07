@@ -7,7 +7,7 @@
 <div class="row m-2 d-flex justify-content-center">
     @foreach ($games as $g)
     <div class="col col-sm-3">
-        <div class="card bg-light mb-3 border border-danger">
+        <div class="card bg-light mb-3 border">
             <div class="card-body">
                 <div>
                     <a href="/detail/{{$g->GameId}}">
@@ -24,9 +24,13 @@
                     </div>
                 </div>
             </div>
+
+                {{-- <small class="text-muted">Last updated 3 mins ago</small> --}}
+
         </div>
     </div>
     @endforeach
+
 </div>
 
     {{-- <div class="card-deck">
