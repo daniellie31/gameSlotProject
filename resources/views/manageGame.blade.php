@@ -25,7 +25,14 @@
                         <td>{{ $g->genres->GameGenre }}</td>
                         <td>{{ $g->GamePrice }}</td>
                         <td><button type="button" class="button">Edit</button></td>
-                        <td><button type="button" class="delete">Delete</button></td>
+                        <td>
+                        <form action = "/delete-game/{{ $g->id }}" method="post">
+                          {{method_field('delete')}}
+                          {{ csrf_field() }}
+                          <button type="submit" class="delete">Delete</button>
+                        </form>
+                        </td>
+                        
                     </tr>
                 @endforeach
             </tbody>

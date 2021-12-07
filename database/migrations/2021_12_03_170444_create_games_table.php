@@ -14,7 +14,7 @@ class CreateGamesTable extends Migration
     public function up()
     {
         Schema::create('games', function (Blueprint $table) {
-            $table->unsignedBigInteger('GameId', 20);
+            $table->unsignedBigInteger('id', 20);
             $table->unsignedBigInteger('GenreId');
             $table->string('GameTitle', 255);
             $table->string('GameImage', 255);

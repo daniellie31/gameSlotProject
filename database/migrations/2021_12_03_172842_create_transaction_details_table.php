@@ -16,13 +16,13 @@ class CreateTransactionDetailsTable extends Migration
         Schema::create('transaction_details', function (Blueprint $table) {
             // $table->unsignedBigInteger('TransactionDetailsId', 20);
             $table->unsignedBigInteger('TransactionId');
-            $table->unsignedBigInteger('GameId');
+            $table->unsignedBigInteger('id');
             $table->integer('Qty');
             $table->timestamps();
 
-            $table->primary(['TransactionId', 'GameId']);
+            $table->primary(['TransactionId', 'id']);
             $table->foreign('TransactionId')->references('TransactionId')->on('transactions')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('GameId')->references('GameId')->on('games')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id')->references('id')->on('games')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
