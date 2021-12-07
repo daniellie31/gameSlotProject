@@ -10,8 +10,7 @@
         <div class="card bg-white mb-3 border">
             <div class="card-body">
                 <div>
-                    <a href="/detail/{{$g->GameId}}">
-
+                    <a href="/details/{{$g->id}}">
                         <img class="card-img-top rounded-img" src="{{Storage::url('images/'.$g->GameImage)}}" alt="image" />
                     </a>
                     <div class="m-3">

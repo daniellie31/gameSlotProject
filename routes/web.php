@@ -33,3 +33,6 @@ Route::post('/add-game',[GameController::class,'insertGame']);
 Route::get('/manageGame',[GameController::class,'manageGame']);
 
 Route::delete('/delete-game/{id}',[GameController::class,'deleteGame']);
+
+
+Route::get('/details/{id}', [GameController::class,'viewDetails']);
