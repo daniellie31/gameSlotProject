@@ -8,7 +8,7 @@
         <div class="form-container">
             <table class="table table-borderless">
                 <h2 class="font-weight-bold">Game Genre</h2>
-                <tbody>
+                <tbody class="bg-white">
                     @foreach ($genres as $g)
                         <tr>
                             <td class="col-12">{{ $g->GameGenre }}</td>

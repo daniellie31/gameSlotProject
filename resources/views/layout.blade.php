@@ -8,9 +8,9 @@
     <link rel="icon" href="{{Storage::url('images/GS.png')}}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<body>
+<body class="bg-light">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white" style="box-shadow: 0 0 6px 0 rgba(100, 100, 100, 0.26);">
             <a class="navbar-brand" href="/"><img src="{{Storage::url('images/GameSLot.png')}}" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -39,7 +39,7 @@
         @yield('content')
     </main>
 
-    <footer class="footer navbar-light bg-light"">
+    <footer class="footer navbar-light bg-white" style="box-shadow: 0 0 6px 0 rgba(100, 100, 100, 0.26);">
         <div class="container text-center py-3">
             <span class="text-muted">&copy 2021 SL, Inc. All rights reserved.</span>
         </div>
