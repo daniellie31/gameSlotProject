@@ -21,11 +21,11 @@
                         <td>
                             <img src="{{ Storage::url('images/' . $g->GameImage) }}" alt="image" /> {{ $g->GameTitle }}
                         </td>
-                        <td>{{ $g->GamePegiRating }}</td>
-                        <td>{{ $g->genres->GameGenre }}</td>
-                        <td>{{ $g->GamePrice }}</td>
-                        <td><button type="button" class="button">Edit</button></td>
-                        <td>
+                        <td style="vertical-align: middle">{{ $g->GamePegiRating }}</td>
+                        <td style="vertical-align: middle">{{ $g->genres->GameGenre }}</td>
+                        <td style="vertical-align: middle">{{ $g->GamePrice }}</td>
+                        <td style="vertical-align: middle"><button type="button" class="button">Edit</button></td>
+                        <td style="vertical-align: middle">
                         <form action = "/delete-game/{{ $g->id }}" method="post">
                           {{method_field('delete')}}
                           {{ csrf_field() }}
