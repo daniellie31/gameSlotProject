@@ -20,17 +20,15 @@
                                 <p class="card-text genre-color">{{$g->genres->GameGenre}}</p>
                             </span>
                         </div>
-                        <p class="card-text text-center">${{$g->GamePrice}}</p>
+                        @if ($g->GamePrice == 0)
+                            <p class="card-text text-center">Free</p>
+                        @else
+                            <p class="card-text text-center">${{$g->GamePrice}}</p>
+                        @endif
                     </div>
-
-            
-                    
-
                 </div>
             </div>
-
                 {{-- <small class="text-muted">Last updated 3 mins ago</small> --}}
-
         </div>
     </div>
     @endforeach

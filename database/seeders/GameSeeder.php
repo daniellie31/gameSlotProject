@@ -19,7 +19,7 @@ class GameSeeder extends Seeder
             'GameTitle' => 'Battlefield 1',
             'GameImage' => 'battlefield.jpg',
             'GameDesc' => 'Battlefield™ 1 takes you back to The Great War, WW1, where new technology and worldwide conflict changed the face of warfare forever.',
-            'GamePrice' => 100,
+            'GamePrice' => 0,
             'GamePegiRating' => 18
         ]);
         DB::table('games')->insert([

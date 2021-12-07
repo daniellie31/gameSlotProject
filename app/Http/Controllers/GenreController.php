@@ -11,4 +11,8 @@ class GenreController extends Controller
         $genres = Genre::all();
         return view('addGame', compact('genres'));
     }
+    public function manageGameGenre(){
+        $genres = Genre::all();
+        return view('manageGameGenre', compact('genres'));
+    }
 }
