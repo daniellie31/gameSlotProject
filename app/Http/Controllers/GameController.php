@@ -36,4 +36,12 @@ class GameController extends Controller
         return redirect()->back();
 
     }
+
+    public function manageGame(){
+        //SELECT * FROM movies
+        $games = Game::all();
+        $genres = Genre::all();
+        return view('manageGame', compact('games', 'genres'));
+      //  return view('home', ['m' =>$movies]);
+    }
 }

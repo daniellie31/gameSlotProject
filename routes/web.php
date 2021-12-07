@@ -29,3 +29,5 @@ Route::get('/addGame', [GenreController::class, 'showAllGameGenre']);
 Route::get('/manageGameGenre', [GenreController::class, 'manageGameGenre']);
 
 Route::post('/add-game',[GameController::class,'insertGame']);
+
+Route::get('/manageGame',[GameController::class,'manageGame']);

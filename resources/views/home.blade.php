@@ -11,6 +11,7 @@
             <div class="card-body">
                 <div>
                     <a href="/detail/{{$g->GameId}}">
+                        
                         <img class="card-img-top rounded-img" src="{{Storage::url('images/'.$g->GameImage)}}" alt="image" />
                     </a>
                     <div class="m-3">
