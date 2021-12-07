@@ -26,3 +26,6 @@ Route::get('/signUp',function(){
 });
 
 Route::get('/addGame', [GenreController::class, 'showAllGameGenre']);
+
+Route::post('/add-game',[GameController::class,'insertGame']);
+
