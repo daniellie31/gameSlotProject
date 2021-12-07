@@ -16,9 +16,9 @@ class GameSeeder extends Seeder
     {
         DB::table('games')->insert([
             'GenreId' => 1,
-            'GameTitle' => 'Counter Strike: Global Offensive',
-            'GameImage' => 'csgo.jpg',
-            'GameDesc' => 'Counter-Strike Global Offensive (CS: GO) expands upon the team-based action gameplay that it pioneered when it was launched 19 years ago. CS:GO features new maps, characters, weapons, and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).',
+            'GameTitle' => 'Battlefield 1',
+            'GameImage' => 'battlefield.jpg',
+            'GameDesc' => 'Battlefield™ 1 takes you back to The Great War, WW1, where new technology and worldwide conflict changed the face of warfare forever.',
             'GamePrice' => 100,
             'GamePegiRating' => 18
         ]);

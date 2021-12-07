@@ -22,6 +22,10 @@
                         </div>
                         <p class="card-text text-center">${{$g->GamePrice}}</p>
                     </div>
+
+            
+                    
+
                 </div>
             </div>
 
