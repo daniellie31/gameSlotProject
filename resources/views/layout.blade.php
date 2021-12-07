@@ -39,10 +39,12 @@
         @yield('content')
     </main>
 
-    <footer class="footer navbar-light bg-white" style="box-shadow: 0 0 6px 0 rgba(100, 100, 100, 0.26);">
+    <footer class="footer navbar-light bg-white navbar-fixed-bottom" style="box-shadow: 0 0 6px 0 rgba(100, 100, 100, 0.26);">
         <div class="container text-center py-3">
             <span class="text-muted">&copy 2021 SL, Inc. All rights reserved.</span>
         </div>
-    </footer>
+    </footer> 
+
+
 </body>
 </html>
