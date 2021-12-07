@@ -6,7 +6,7 @@
 
     <div class="manageGameGenre-container">
         <div class="form-container">
-            <table class="table table-borderless">
+            <table class="table table-borderless" style="box-shadow: 0 0 6px 0 rgba(100, 100, 100, 0.26);">
                 <h2 class="font-weight-bold">Game Genre</h2>
                 <tbody class="bg-white">
                     @foreach ($genres as $g)
