@@ -25,10 +25,11 @@
                         <a class="nav-link" href="/manageGameGenre">Manage Game Genre <span class="sr-only">(current)</span></a>
                     </li>
                     <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control mr-sm-2" style="width: 500px" type="search" placeholder="Search" aria-label="Search">
                     </form>
+
                 </ul>
-                <a href="/signIn"><button type="submit" class="btn btn-danger mr-2">Sign in</button></a>
+                <a href="/signIn" class="ml-auto"><button type="submit" class="btn btn-danger mr-2">Sign in</button></a>
                 <a href="/signUp"><button type="submit" class="btn btn-outline-danger">Sign up</button></a>
                 {{-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> --}}
             </div>
@@ -43,7 +44,7 @@
         <div class="container text-center py-3">
             <span class="text-muted">&copy 2021 SL, Inc. All rights reserved.</span>
         </div>
-    </footer> 
+    </footer>
 
 
 </body>

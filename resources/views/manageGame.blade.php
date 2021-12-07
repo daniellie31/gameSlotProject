@@ -19,20 +19,20 @@
                 @foreach ($games as $g)
                     <tr>
                         <td>
-                            <img src="{{ Storage::url('images/' . $g->GameImage) }}" alt="image" /> {{ $g->GameTitle }}
+                            <img class="game-logo" src="{{ Storage::url('images/' . $g->GameImage) }}" alt="image" /> {{ $g->GameTitle }}
                         </td>
                         <td style="vertical-align: middle">{{ $g->GamePegiRating }}</td>
                         <td style="vertical-align: middle">{{ $g->genres->GameGenre }}</td>
                         <td style="vertical-align: middle">{{ $g->GamePrice }}</td>
                         <td style="vertical-align: middle"><button type="button" class="button">Edit</button></td>
                         <td style="vertical-align: middle">
-                        <form action = "/delete-game/{{ $g->id }}" method="post">
-                          {{method_field('delete')}}
-                          {{ csrf_field() }}
-                          <button type="submit" class="delete">Delete</button>
-                        </form>
+                            <form action="/delete-game/{{ $g->id }}" method="post">
+                                {{ method_field('delete') }}
+                                {{ csrf_field() }}
+                                <button type="submit" class="delete">Delete</button>
+                            </form>
                         </td>
-                        
+
                     </tr>
                 @endforeach
             </tbody>
