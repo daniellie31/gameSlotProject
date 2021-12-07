@@ -6,7 +6,7 @@
 
 <div class="row m-2 d-flex justify-content-center">
     @foreach ($games as $g)
-    <div class="col col-sm-2 bg-danger">
+    <div class="col col-sm-2 mt-5">
         <div class="card bg-white mb-3 border">
             <div class="card-body">
                 <div>
