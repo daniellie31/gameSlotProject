@@ -11,7 +11,7 @@
             <div class="card-body">
                 <div>
                     <a href="/detail/{{$g->GameId}}">
-                        
+
                         <img class="card-img-top rounded-img" src="{{Storage::url('images/'.$g->GameImage)}}" alt="image" />
                     </a>
                     <div class="m-3">
@@ -33,22 +33,9 @@
         </div>
     </div>
     @endforeach
-
 </div>
-
-    {{-- <div class="card-deck">
-        @foreach ($games as $g)
-            <div class="card">
-                <img class="card-img-top" src="{{Storage::url($g->GameImage)}}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">{{$g->GameTitle}}</h5>
-                    <p class="card-text">{{$g->GameDesc}}</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
-        @endforeach
-    </div> --}}
+<div class="pagination justify-content-center">
+    {{ $games->links() }}
+</div>
 
 @endsection
