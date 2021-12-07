@@ -11,7 +11,7 @@ class GameController extends Controller
 {
     public function showGames(){
         //SELECT * FROM movies
-        $games = Game::paginate(5);
+        $games = Game::paginate(10);
         $genres = Genre::all();
         return view('home', compact('games', 'genres'));
       //  return view('home', ['m' =>$movies]);
@@ -29,7 +29,7 @@ class GameController extends Controller
         $imageName = time().'.'.$file->getClientOriginalExtension();
 
         Storage::putFileAs('public/images',$file ,$imageName);
-        
+
         $games->GameImage = $imageName;
         $games->save();
 
