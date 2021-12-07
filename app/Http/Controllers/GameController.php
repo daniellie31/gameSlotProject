@@ -44,4 +44,14 @@ class GameController extends Controller
         return view('manageGame', compact('games', 'genres'));
       //  return view('home', ['m' =>$movies]);
     }
+    
+    public function deleteGame($id){
+      $games = Game::find($id);
+      Storage::delete('public/'.$games->GameImage);
+      $games->delete();
+      
+      return redirect()->back();
+
+    }
+
 }
