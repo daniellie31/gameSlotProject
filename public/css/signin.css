@@ -5,14 +5,11 @@
     margin: 60px auto;
     /* background-color: green; */
 }
-/* 
-*, ::after, ::before {
-    box-sizing: border-box;
-} */
 
 .text-center {
     text-align: center!important;
 }
+
 .sign-in-header{
     text-align: center;
     margin: 60px;

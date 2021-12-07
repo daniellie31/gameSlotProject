@@ -9,15 +9,17 @@ use Illuminate\Support\Facades\Storage;
 
 class GameController extends Controller
 {
-    public function showGames(){
+    public function showGames()
+    {
         //SELECT * FROM movies
         $games = Game::paginate(5);
         $genres = Genre::all();
         return view('home', compact('games', 'genres'));
-      //  return view('home', ['m' =>$movies]);
+        //  return view('home', ['m' =>$movies]);
     }
 
-    public function insertGame(Request $request){
+    public function insertGame(Request $request)
+    {
         $games = new Game();
         $games->GameTitle = $request->GameTitle;
         $games->GameDesc = $request->GameDesc;
@@ -28,37 +30,37 @@ class GameController extends Controller
 
         $imageName = time().'.'.$file->getClientOriginalExtension();
 
-        Storage::putFileAs('public/images',$file ,$imageName);
+        Storage::putFileAs('public/images', $file, $imageName);
 
         $games->GameImage = $imageName;
         $games->save();
 
         return redirect()->back();
-
     }
 
-    public function manageGame(){
+    public function manageGame()
+    {
         //SELECT * FROM movies
         $games = Game::all();
         $genres = Genre::all();
         return view('manageGame', compact('games', 'genres'));
-      //  return view('home', ['m' =>$movies]);
+        //  return view('home', ['m' =>$movies]);
     }
 
-    public function deleteGame($id){
-      $games = Game::find($id);
-      $games->delete();
+    public function deleteGame($id)
+    {
+        $games = Game::find($id);
+        $games->delete();
 
-      return redirect()->back();
-
+        return redirect()->back();
     }
 
-    public function viewDetails($id){
-      $games = Game::find($id);
-      
-      return view('details',[
-          'Game' => $games
-      ]);
-  }
-
+    public function viewDetails($id)
+    {
+        $games = Game::find($id);
+        return view('details', compact('games'));
+    //     return view('details', [
+    //       'Game' => $games
+    //   ]);
+    }
 }

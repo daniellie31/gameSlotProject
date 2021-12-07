@@ -1,11 +1,10 @@
-.button {
+.button-edit {
     border: none;
     background-color: transparent;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-
     cursor: pointer;
     color: blue;
 }
@@ -17,7 +16,6 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-
     cursor: pointer;
     color: red;
 }
@@ -37,15 +35,6 @@
     width: 100%;
     max-width: 900px;
     padding: 60px;
-}
-
-.addGame {
-    float: right;
-    background-color: blueviolet;
-    color: white;
-    padding: 5px;
-    font-size: 12px;
-    cursor: pointer;
 }
 
 td {

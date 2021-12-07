@@ -1,9 +1,81 @@
-.content{
-    border:1px solid black;
-    padding: 30px;
+.detail-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: #171718; */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 0 rgba(100, 100, 100, 0.26);
 }
 
+.left-detail {
+    /* background-color: yellow; */
+    width: 60%;
+    /* color: white; */
+}
 
-.container{
-    padding: 50px;
+.right-detail {
+    /* background-color: purple; */
+    width: 30%;
+}
+
+.content {
+    /* border:1px solid black; */
+    padding: 30px;
+    border-radius: 15px;
+    /* background-color: black; */
+    width: 70%;
+    height: 400px;
+    box-shadow: 0 0 6px 0 rgba(100, 100, 100, 0.26);
+}
+
+.background-container {
+    /* padding: 50px; */
+    /* background-color: blue; */
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-detail-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 60px;
+    /* color: red; */
+}
+
+.rating-price {
+    display: flex;
+    /* background-color: brown; */
+    justify-content: space-evenly;
+}
+
+.rating {
+    /* background-color: red; */
+    /* color: red; */
+    font-size: 20px;
+    width: 40px;
+}
+.price {
+    font-size: 38px;
+    font-weight: bold;
+    color: #df4759;
+}
+.button-add-to-cart {
+    display: flex;
+    justify-content: flex-end;
+}
+.game-genre-container {
+    /* background-color: red; */
+    display: flex;
+    width: 120px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
 }
