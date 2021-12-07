@@ -6,8 +6,8 @@
 
 <div class="row m-2 d-flex justify-content-center">
     @foreach ($games as $g)
-    <div class="col col-sm-2">
-        <div class="card bg-light mb-3 border">
+    <div class="col col-sm-2 bg-danger">
+        <div class="card bg-white mb-3 border">
             <div class="card-body">
                 <div>
                     <a href="/detail/{{$g->GameId}}">

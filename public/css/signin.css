@@ -5,10 +5,10 @@
     margin: 60px auto;
     /* background-color: green; */
 }
-
+/* 
 *, ::after, ::before {
     box-sizing: border-box;
-}
+} */
 
 .text-center {
     text-align: center!important;
