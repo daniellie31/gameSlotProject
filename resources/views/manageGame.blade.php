@@ -21,7 +21,7 @@
                 @foreach ($games as $g)
                     <tr>
                         <td>
-                            <img class="game-logo" src="{{ Storage::url('images/' . $g->GameImage) }}" alt="image" /> {{ $g->GameTitle }}
+                            <img class="game-logo mr-2" src="{{ Storage::url('images/' . $g->GameImage) }}" alt="image" /> {{ $g->GameTitle }}
                         </td>
                         <td style="vertical-align: middle">{{ $g->GamePegiRating }}</td>
                         <td style="vertical-align: middle">{{ $g->genres->GameGenre }}</td>
