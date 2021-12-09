@@ -6,13 +6,13 @@
 
     <div class="row m-2 d-flex justify-content-center">
         @foreach ($games as $g)
-            <div class="col col-sm-2 mt-5">
+            <div class="col col-sm-2 mt-3" style="max-width: 600px">
                 <div class="card bg-white mb-3 border">
                     <div class="card-body">
-                        <div>
+                        <div class="d-flex flex-column text-center">
                             <a href="/details/{{ $g->id }}">
                                 <img class="card-img-top rounded-img" src="{{ Storage::url('images/' . $g->GameImage) }}"
-                                    alt="image" />
+                                    alt="image" style="width: 120px; height:120px;" />
                             </a>
                             <div class="m-3">
                                 <h5 class="card-title text-center">{{ $g->GameTitle }}</h5>
@@ -29,7 +29,6 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <small class="text-muted">Last updated 3 mins ago</small> --}}
                 </div>
             </div>
         @endforeach

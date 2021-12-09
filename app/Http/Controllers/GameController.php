@@ -11,11 +11,9 @@ class GameController extends Controller
 {
     public function showGames()
     {
-        //SELECT * FROM movies
-        $games = Game::paginate(5);
+        $games = Game::paginate(10);
         $genres = Genre::all();
         return view('home', compact('games', 'genres'));
-        //  return view('home', ['m' =>$movies]);
     }
 
     public function insertGame(Request $request)
@@ -40,11 +38,9 @@ class GameController extends Controller
 
     public function manageGame()
     {
-        //SELECT * FROM movies
         $games = Game::all();
         $genres = Genre::all();
         return view('manageGame', compact('games', 'genres'));
-        //  return view('home', ['m' =>$movies]);
     }
 
     public function deleteGame($id)
@@ -61,8 +57,5 @@ class GameController extends Controller
     {
         $games = Game::find($id);
         return view('details', compact('games'));
-    //     return view('details', [
-    //       'Game' => $games
-    //   ]);
     }
 }

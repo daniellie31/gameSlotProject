@@ -11,7 +11,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
-<body class="bg-light">
+<body class="bg-light" style="display: flex; flex-direction:column; min-height:100vh;">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-white"
             style="box-shadow: 0 0 6px 0 rgba(100, 100, 100, 0.26);">
@@ -32,7 +32,7 @@
                                 class="sr-only">(current)</span></a>
                     </li>
                     <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" style="width: 500px" type="search" placeholder="Search"
+                        <input class="form-control mr-sm-2" style="width: 500px; margin-left:100px" type="search" placeholder="Search"
                             aria-label="Search">
                     </form>
 
@@ -49,12 +49,15 @@
         @yield('content')
     </main>
 
-    <footer class="footer navbar-light bg-white navbar-fixed-bottom"
-        style="box-shadow: 0 0 6px 0 rgba(100, 100, 100, 0.26);">
+    <footer class="footer navbar-light bg-white"
+        style="box-shadow: 0 0 6px 0 rgba(100, 100, 100, 0.26); margin-top:auto;">
         <div class="container text-center py-3">
             <span class="text-muted">&copy 2021 SL, Inc. All rights reserved.</span>
         </div>
     </footer>
+
+
+
 
 </body>
 
