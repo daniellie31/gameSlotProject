@@ -42,3 +42,5 @@ Route::post('/eGame/{id}',[GameController::class,'updateGame']);
 
 Route::get('/updateGameGenre/{id}',[GenreController::class,'viewGameGenre']);
 Route::post('/updateGameGenre/{id}',[GenreController::class,'editGameGenre']);
+
+Route::get('/search',[GameController::class,'search']);
