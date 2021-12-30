@@ -19,6 +19,16 @@ class GameController extends Controller
     public function insertGame(Request $request)
     {
         $games = new Game();
+
+        $validated = $request->validate([
+            'GameTitle' => 'required',
+            'GameDesc' => 'required',
+            'GamePrice' => 'required',
+            'GenreId' => 'required',
+            'GamePegiRating' => 'required',
+            'GameImage' => 'required',
+        ]);
+
         $games->GameTitle = $request->GameTitle;
         $games->GameDesc = $request->GameDesc;
         $games->GamePrice = $request->GamePrice;
@@ -31,7 +41,7 @@ class GameController extends Controller
         Storage::putFileAs('public/images', $file, $imageName);
 
         $games->GameImage = $imageName;
-        $games->save();
+       
 
         return redirect()->back();
     }

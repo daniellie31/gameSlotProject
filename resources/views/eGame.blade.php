@@ -31,6 +31,7 @@
                         {{-- <td><input type="text" name="title" id="" placeholder="Input Title"></td> --}}
                         <td>
                             <select id="genre-option" style="width: 100%" name="GenreId">
+                                <option value="NewGenre">Add New Genre</option>
                                 @foreach ($genres as $g)
                                     <option value="{{ $g->GenreId }}">{{ $g->GameGenre }}</option>
                                 @endforeach

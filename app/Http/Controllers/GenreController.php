@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Genre;
+use Database\Seeders\GameSeeder;
 use Illuminate\Http\Request;
 
 class GenreController extends Controller
@@ -15,4 +16,5 @@ class GenreController extends Controller
         $genres = Genre::all();
         return view('manageGameGenre', compact('genres'));
     }
+
 }
