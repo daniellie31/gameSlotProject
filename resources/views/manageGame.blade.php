@@ -34,7 +34,13 @@
                     <td style="vertical-align: middle">{{ $g->GamePegiRating }}</td>
                     <td style="vertical-align: middle">{{ $g->genres->GameGenre }}</td>
                     <td style="vertical-align: middle">{{ $g->GamePrice }}</td>
-                    <td style="vertical-align: middle"><button type="button" class="button-edit">Edit</button></td>
+                    <td style="vertical-align: middle">
+                        <form action="/eGame/{{ $g->id }}" method="get">
+                            {{ csrf_field() }}
+                            <button type="submit" class="button-edit">Edit</button>
+                        </form>
+                      
+                    </td>
                     <td style="vertical-align: middle">
                         <form action="/delete-game/{{ $g->id }}" method="post">
                             {{ method_field('delete') }}

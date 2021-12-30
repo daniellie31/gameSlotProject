@@ -36,3 +36,8 @@ Route::delete('/delete-game/{id}',[GameController::class,'deleteGame']);
 
 
 Route::get('/details/{id}', [GameController::class,'viewDetails']);
+
+Route::get('/eGame/{id}',[GameController::class,'editGame']);
+Route::post('/eGame/{id}',[GameController::class,'updateGame']);
+
+// Route::put('/edit-game',[GameController::class,'updateGame']);

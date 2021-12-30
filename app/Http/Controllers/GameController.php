@@ -58,4 +58,33 @@ class GameController extends Controller
         $games = Game::find($id);
         return view('details', compact('games'));
     }
+
+    public function updateGame(Request $request , $id){
+        $games = Game::find($id);
+        $games->GameTitle = $request->GameTitle != null ? $request->GameTitle : $games->GameTitle;
+        $games->GameDesc = $request->GameDesc != null ? $request->GameDesc :  $games->GameDesc;
+        $games->GamePrice = $request->GamePrice != null ? $request->GamePrice : $games->GamePrice;
+        $games->GenreId = $request->GenreId;
+        $games->GamePegiRating = $request->GamePegiRating;
+        $file = $request->file('GameImage');
+
+        if($file != null){
+            $imageName = time().'.'.$file->getClientOriginalExtension();
+    
+            Storage::putFileAs('public/images', $file, $imageName);
+    
+            $games->GameImage = $imageName;
+        }
+
+       
+        $games->save();
+
+        return redirect('/');
+    }
+
+    public function editGame($id){
+        $games = Game::find($id);
+        $genres = Genre::all();
+        return view('eGame', compact('games','genres'));
+    }
 }
