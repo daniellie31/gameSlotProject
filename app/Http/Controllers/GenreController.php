@@ -16,5 +16,13 @@ class GenreController extends Controller
         $genres = Genre::all();
         return view('manageGameGenre', compact('genres'));
     }
+<<<<<<< Updated upstream
 
+=======
+    public function viewUpdateGameGenre($id){
+        // $genres = Genre::all();
+        // return view('updateGameGenre', compact('genres'));
+        return Genre::find($id);
+    }
+>>>>>>> Stashed changes
 }

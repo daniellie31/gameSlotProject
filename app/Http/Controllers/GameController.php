@@ -86,9 +86,7 @@ class GameController extends Controller
             $games->GameImage = $imageName;
         }
 
-
         $games->save();
-
         return redirect('/');
     }
 
@@ -97,4 +95,5 @@ class GameController extends Controller
         $genres = Genre::all();
         return view('eGame', compact('games','genres'));
     }
+
 }

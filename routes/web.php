@@ -40,6 +40,10 @@ Route::get('/details/{id}', [GameController::class,'viewDetails']);
 Route::get('/eGame/{id}',[GameController::class,'editGame']);
 Route::post('/eGame/{id}',[GameController::class,'updateGame']);
 
+<<<<<<< Updated upstream
 
+=======
+Route::get('/updateGameGenre/{GenreId}',[GenreController::class,'viewUpdateGameGenre']);
+>>>>>>> Stashed changes
 
 // Route::put('/edit-game',[GameController::class,'updateGame']);
