@@ -22,7 +22,7 @@ class CreateGamesTable extends Migration
             $table->integer('GamePrice');
             $table->integer('GamePegiRating');
             $table->timestamps();
-            $table->foreign('GenreId')->references('GenreId')->on('genres')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('GenreId')->references('id')->on('genres')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

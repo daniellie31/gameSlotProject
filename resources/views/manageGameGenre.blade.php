@@ -12,7 +12,7 @@
                     @foreach ($genres as $g)
                         <tr>
                             <td class="col-12">{{ $g->GameGenre }}</td>
-                            <td><a href="/updateGameGenre/{{$g->GenreId}}">Edit</a></td>
+                            <td><a href="/updateGameGenre/{{$g->id}}">Edit</a></td>
                         </tr>
                     @endforeach
                 </tbody>

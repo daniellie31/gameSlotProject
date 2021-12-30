@@ -33,7 +33,7 @@
                             <select id="genre-option" style="width: 100%" name="GenreId">
                                 <option value="NewGenre">Add New Genre</option>
                                 @foreach ($genres as $g)
-                                    <option value="{{ $g->GenreId }}">{{ $g->GameGenre }}</option>
+                                    <option value="{{ $g->id }}">{{ $g->GameGenre }}</option>
                                 @endforeach
                             </select>
                         </td>

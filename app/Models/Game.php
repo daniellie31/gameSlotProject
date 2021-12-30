@@ -11,7 +11,7 @@ class Game extends Model
     public $timestamps = false;
 
     public function genres(){
-        return $this->belongsTo(Genre::class, 'GenreId', 'GenreId');
+        return $this->belongsTo(Genre::class, 'GenreId', 'id');
     }
 
     public function transactionDetails(){

@@ -41,7 +41,7 @@ class GameController extends Controller
         Storage::putFileAs('public/images', $file, $imageName);
 
         $games->GameImage = $imageName;
-       
+        $games->save();
 
         return redirect()->back();
     }
