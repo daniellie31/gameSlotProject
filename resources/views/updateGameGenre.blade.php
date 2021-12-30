@@ -6,7 +6,7 @@
     <div class="addGame-container">
         <div class="form-container">
             <h2 class="font-weight-bold">Update Game Genre</h2>
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="/updateGameGenre/{{ $genres->id }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <table class="table table-borderless">
                     <tr>
