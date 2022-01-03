@@ -17,14 +17,14 @@ class RegisterController extends Controller
 
     public function store(Request $request){
         $validated = $request->validate([
-            'UserName' => 'required|max:255',
-            'UserEmail' => 'required|unique:users|email',
-            'UserPassword' => 'required',
-            'UserGender' => 'required|in:male,female',
-            'UserDOB' => 'required|before:today'
+            'name' => 'required|max:255',
+            'email' => 'required|unique:users|email',
+            'password' => 'required',
+            'gender' => 'required|in:male,female',
+            'dob' => 'required|before:today'
         ]);
 
-        $validated['UserPassword'] = Hash::make($validated['UserPassword']);
+        $validated['password'] = Hash::make($validated['password']);
         User::create($validated);
 
         $request->session()->flash('success','Registrasi berhasil ! silahkan Sign In');

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -18,15 +18,15 @@ class LoginController extends Controller
     public function authenticate(Request $request){
 
        $credentials =  $request->validate([
-            'UserEmail' => 'required|email',
-            'UserPassword' => 'required'
+            'email' => 'required|email',
+            'password' => 'required'
         ]);
 
-      
+
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('dashboard');
+            return redirect()->intended('/dashboard');
         }
 
         return back()->with('failed','Sign In Gagal !');

@@ -27,16 +27,12 @@
 <form class="form-signin card" action="signIn" method="post">
         @csrf
         <label for="email">Email address</label>
-        <input type="email" id="email" class="form-control @error('UserEmail') is-invalid @enderror" name="UserEmail" >
+        <input type="email" id="email" class="form-control " name="email" >
 
        <label for="password">Password</label>
-        <input type="password" id="password" class="form-control @error('UserPassword') is-invalid @enderror"  name="UserPassword">
+        <input type="password" id="password" class="form-control "  name="password">
 
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" value="remember-me"> Remember me
-        </label>
-    </div>
+
     <button class="btn btn-lg btn-danger btn-block" type="submit">Sign in</button>
 </form>
 @endsection
