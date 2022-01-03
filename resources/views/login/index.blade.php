@@ -13,7 +13,7 @@
     {{ session('success') }}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
-  
+
 @endif
 
 @if (session()->has('failed'))
@@ -21,15 +21,26 @@
     {{ session('failed') }}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
-  
+
 @endif
 <form class="form-signin card" action="/signIn" method="post">
     @csrf
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    <form class="form-signin card" action="signIn" method="post">
+        @csrf
+        <label for="email">Email address</label>
+        <input type="email" id="email" class="form-control" required autofocus name="email">
 
     <label for="email">Email address</label>
     <input type="email" id="email" class="form-control @error('UserEmail') is-invalid @enderror"  autofocus name="UserEmail">
     @error('UserEmail')
-    
+
     <div class="invalid-feedback">
         {{  $message }}
     </div>
