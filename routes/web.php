@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\GenreController;
+use App\Models\Cart;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,3 +47,6 @@ Route::post('/signOut',[LoginController::class,'signOut']);
 
 Route::get('/signUp',[RegisterController::class,'sign_up'])->middleware('guest');
 Route::post('/signUp',[RegisterController::class,'store']);
+
+Route::get('/cart',[CartController::class,'viewCart'])->middleware('auth');
+Route::post('/add-to-cart',[CartController::class,'addToCart']);

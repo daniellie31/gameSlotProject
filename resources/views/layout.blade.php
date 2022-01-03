@@ -47,6 +47,7 @@
 
                     <ul class="navbar-nav">
                         @auth
+                            <a href="/cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
