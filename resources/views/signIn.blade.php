@@ -1,4 +1,5 @@
 @extends('layout')
+@section('title', 'Sign In')
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/signin.css') }}">
