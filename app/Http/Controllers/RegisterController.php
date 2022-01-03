@@ -20,11 +20,11 @@ class RegisterController extends Controller
             'UserName' => 'required|max:255',
             'UserEmail' => 'required|unique:users|email',
             'UserPassword' => 'required',
-            'UserGender' => 'in:male,female',
-            'UserDOB' => 'before:today'
+            'UserGender' => 'required|in:male,female',
+            'UserDOB' => 'required|before:today'
         ]);
         
-        $validated['UserPassword'] = Hash::make($validated['UserPassword']);
+        // $validated['UserPassword'] = Hash::make($validated['UserPassword']);
          User::create($validated);
         
          $request->session()->flash('success','Registrasi berhasil ! silahkan Sign In ');

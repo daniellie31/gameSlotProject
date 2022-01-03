@@ -15,13 +15,33 @@
   </div>
   
 @endif
-<form class="form-signin card" action="signIn" method="post">
-    @csrf
-    <label for="email">Email address</label>
-    <input type="email" id="email" class="form-control" required autofocus name="email">
 
+@if (session()->has('failed'))
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ session('failed') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  
+@endif
+<form class="form-signin card" action="/signIn" method="post">
+    @csrf
+
+    <label for="email">Email address</label>
+    <input type="email" id="email" class="form-control @error('UserEmail') is-invalid @enderror"  autofocus name="UserEmail">
+    @error('UserEmail')
+    
+    <div class="invalid-feedback">
+        {{  $message }}
+    </div>
+  @enderror
     <label for="password">Password</label>
-    <input type="password" id="password" class="form-control" required name="password">
+    <input type="password" id="password" class="form-control @error('UserPassword') is-invalid @enderror" required name="UserPassword">
+
+    @error('UserEmail')
+    <div class="invalid-feedback">
+        {{  $message }}
+    </div>
+  @enderror
     <div class="checkbox mb-3">
         <label>
             <input type="checkbox" value="remember-me"> Remember me
