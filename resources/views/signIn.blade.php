@@ -8,13 +8,7 @@
         <h3 class="h3 mb-3 font-weight-bold" style="margin-top: 30px;">Sign in to your account</h3>
     </div>
 
-    @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
 
-    @endif
 
     @if (session()->has('failed'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -26,6 +20,14 @@
 
     <form class="form-signin card" action="/signIn" method="post">
         @csrf
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
         <label for="email">Email address</label>
         <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email">
         @error('email')

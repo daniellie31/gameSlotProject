@@ -19,27 +19,29 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [GameController::class, 'showGames']);
 
-Route::get('/addGame', [GenreController::class, 'showAllGameGenre']);
-Route::get('/manageGameGenre', [GenreController::class, 'manageGameGenre']);
+Route::get('/addGame', [GenreController::class, 'showAllGameGenre'])->middleware('auth');
+Route::get('/manageGameGenre', [GenreController::class, 'manageGameGenre'])->middleware('auth');
 
 Route::post('/add-game',[GameController::class,'insertGame']);
 
-Route::get('/manageGame',[GameController::class,'manageGame']);
+Route::get('/manageGame',[GameController::class,'manageGame'])->middleware('auth');
 
 Route::delete('/delete-game/{id}',[GameController::class,'deleteGame']);
 
 Route::get('/details/{id}', [GameController::class,'viewDetails']);
 
-Route::get('/eGame/{id}',[GameController::class,'editGame']);
+Route::get('/eGame/{id}',[GameController::class,'editGame'])->middleware('auth');
 Route::post('/eGame/{id}',[GameController::class,'updateGame']);
 
-Route::get('/updateGameGenre/{id}',[GenreController::class,'viewGameGenre']);
+Route::get('/updateGameGenre/{id}',[GenreController::class,'viewGameGenre'])->middleware('auth');
 Route::post('/updateGameGenre/{id}',[GenreController::class,'editGameGenre']);
 
 Route::get('/search',[GameController::class,'search']);
 
-Route::get('/signIn',[LoginController::class,'log_in']);
+Route::get('/signIn',[LoginController::class,'log_in'])->name('login')->middleware('guest');
 Route::post('/signIn',[LoginController::class,'authenticate']);
 
-Route::get('/signUp',[RegisterController::class,'sign_up']);
+Route::post('/signOut',[LoginController::class,'signOut']);
+
+Route::get('/signUp',[RegisterController::class,'sign_up'])->middleware('guest');
 Route::post('/signUp',[RegisterController::class,'store']);
