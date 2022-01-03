@@ -1,12 +1,12 @@
 @extends('layout')
 
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/signin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/signin.css') }}">
 
-<div class="sign-in-header">
-    <img src="{{ Storage::url('images/GameSLot.png') }}" class="mid-logo" alt="">
-    <h3 class="h3 mb-3 font-weight-bold" style="margin-top: 30px;">Sign in to your account</h3>
-</div>
+    <div class="sign-in-header">
+        <img src="{{ Storage::url('images/GameSLot.png') }}" class="mid-logo" alt="">
+        <h3 class="h3 mb-3 font-weight-bold" style="margin-top: 30px;">Sign in to your account</h3>
+    </div>
 
 @if (session()->has('success'))
 <div class="alert alert-success alert-dismissible fade show" role="alert">
