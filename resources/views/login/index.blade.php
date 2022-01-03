@@ -8,23 +8,23 @@
         <h3 class="h3 mb-3 font-weight-bold" style="margin-top: 30px;">Sign in to your account</h3>
     </div>
 
-@if (session()->has('success'))
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-    {{ session('success') }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
 
-@endif
+    @endif
 
-@if (session()->has('failed'))
-<div class="alert alert-danger alert-dismissible fade show" role="alert">
-    {{ session('failed') }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-@endif
+    @if (session()->has('failed'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('failed') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
 
 
-<form class="form-signin card" action="signIn" method="post">
+    <form class="form-signin card" action="/signIn" method="post">
         @csrf
         <label for="email">Email address</label>
         <input type="email" id="email" class="form-control " name="email" >

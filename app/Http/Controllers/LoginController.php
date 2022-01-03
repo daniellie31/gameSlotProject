@@ -9,8 +9,9 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-    public function index(){
-        return view('login.index',[
+    public function index()
+    {
+        return view('login.index', [
             'title' => 'Login'
         ]);
     }
@@ -29,8 +30,6 @@ class LoginController extends Controller
             return redirect()->intended('/dashboard');
         }
 
-        return back()->with('failed','Sign In Gagal !');
-
-      
+        return back()->with('failed', 'Sign In Gagal !');
     }
 }
