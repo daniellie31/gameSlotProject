@@ -32,8 +32,7 @@
         <label for="email">Email address</label>
         <input type="email" id="email" class="form-control" required autofocus name="email">
 
-    <label for="email">Email address</label>
-    <input type="email" id="email" class="form-control @error('UserEmail') is-invalid @enderror"  autofocus name="UserEmail">
+
     @error('UserEmail')
 
     <div class="invalid-feedback">
