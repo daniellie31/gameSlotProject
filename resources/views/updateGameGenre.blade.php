@@ -11,7 +11,8 @@
                 <table class="table table-borderless">
                     <tr>
                         <td colspan="2">Game Genre</td>
-                        <td><input type="text" name="GameGenre" id="" style="width: 100%" placeholder="{{ $genres->GameGenre }}"></td>
+                        <td><input type="text" name="GameGenre" id="" style="width: 100%"
+                                placeholder="{{ $genres->GameGenre }}"></td>
                     </tr>
 
                     <tr>

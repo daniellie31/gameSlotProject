@@ -9,16 +9,14 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-    public function index()
+    public function log_in()
     {
-        return view('login.index', [
-            'title' => 'Login'
-        ]);
+        return view('/signIn');
     }
 
-    public function authenticate(Request $request){
-
-       $credentials =  $request->validate([
+    public function authenticate(Request $request)
+    {
+        $credentials =  $request->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);

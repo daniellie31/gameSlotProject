@@ -19,14 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [GameController::class, 'showGames']);
 
-// Route::get('/signIn',function(){
-//     return view('signIn');
-// });
-
-// Route::get('/signUp',function(){
-//     return view('signUp');
-// });
-
 Route::get('/addGame', [GenreController::class, 'showAllGameGenre']);
 Route::get('/manageGameGenre', [GenreController::class, 'manageGameGenre']);
 
@@ -35,7 +27,6 @@ Route::post('/add-game',[GameController::class,'insertGame']);
 Route::get('/manageGame',[GameController::class,'manageGame']);
 
 Route::delete('/delete-game/{id}',[GameController::class,'deleteGame']);
-
 
 Route::get('/details/{id}', [GameController::class,'viewDetails']);
 
@@ -47,8 +38,8 @@ Route::post('/updateGameGenre/{id}',[GenreController::class,'editGameGenre']);
 
 Route::get('/search',[GameController::class,'search']);
 
-Route::get('/signIn',[LoginController::class,'index']);
+Route::get('/signIn',[LoginController::class,'log_in']);
 Route::post('/signIn',[LoginController::class,'authenticate']);
 
-Route::get('/signUp',[RegisterController::class,'index']);
+Route::get('/signUp',[RegisterController::class,'sign_up']);
 Route::post('/signUp',[RegisterController::class,'store']);

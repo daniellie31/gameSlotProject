@@ -1,23 +1,48 @@
 @extends('layout')
-@section('title', 'Sign In')
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/signin.css') }}">
+
     <div class="sign-in-header">
         <img src="{{ Storage::url('images/GameSLot.png') }}" class="mid-logo" alt="">
         <h3 class="h3 mb-3 font-weight-bold" style="margin-top: 30px;">Sign in to your account</h3>
     </div>
-    <form class="form-signin card">
-        <label for="inputEmail">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" required="" autofocus="">
-        <label for="inputPassword">Password</label>
-        <input type="password" id="inputPassword" class="form-control" required="">
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
+
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
+
+    @endif
+
+    @if (session()->has('failed'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('failed') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+
+    <form class="form-signin card" action="/signIn" method="post">
+        @csrf
+        <label for="email">Email address</label>
+        <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email">
+        @error('email')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+        @enderror
+
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control @error('email') is-invalid @enderror" name="password">
+        @error('password')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+        @enderror
+
+
         <button class="btn btn-lg btn-danger btn-block" type="submit">Sign in</button>
     </form>
-
 @endsection

@@ -22,36 +22,37 @@
                 @if ($games->isEmpty())
                     <tr>
                         <td>
-                            No Data 
+                            No Data
                         </td>
                     </tr>
                 @else
-                @foreach ($games as $g)
-                <tr>
-                    <td>
-                        <img class="game-logo" src="{{ Storage::url('images/' . $g->GameImage) }}" alt="image" /> {{ $g->GameTitle }}
-                    </td>
-                    <td style="vertical-align: middle">{{ $g->GamePegiRating }}</td>
-                    <td style="vertical-align: middle">{{ $g->genres->GameGenre }}</td>
-                    <td style="vertical-align: middle">{{ $g->GamePrice }}</td>
-                    <td style="vertical-align: middle">
-                        <form action="/eGame/{{ $g->id }}" method="get">
-                            {{ csrf_field() }}
-                            <button type="submit" class="button-edit">Edit</button>
-                        </form>
-                      
-                    </td>
-                    <td style="vertical-align: middle">
-                        <form action="/delete-game/{{ $g->id }}" method="post">
-                            {{ method_field('delete') }}
-                            {{ csrf_field() }}
-                            <button type="submit" class="delete">Delete</button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
+                    @foreach ($games as $g)
+                        <tr>
+                            <td>
+                                <img class="game-logo" src="{{ Storage::url('images/' . $g->GameImage) }}"
+                                    alt="image" /> {{ $g->GameTitle }}
+                            </td>
+                            <td style="vertical-align: middle">{{ $g->GamePegiRating }}</td>
+                            <td style="vertical-align: middle">{{ $g->genres->GameGenre }}</td>
+                            <td style="vertical-align: middle">{{ $g->GamePrice }}</td>
+                            <td style="vertical-align: middle">
+                                <form action="/eGame/{{ $g->id }}" method="get">
+                                    {{ csrf_field() }}
+                                    <button type="submit" class="button-edit">Edit</button>
+                                </form>
+
+                            </td>
+                            <td style="vertical-align: middle">
+                                <form action="/delete-game/{{ $g->id }}" method="post">
+                                    {{ method_field('delete') }}
+                                    {{ csrf_field() }}
+                                    <button type="submit" class="delete">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
                 @endif
-               
+
             </tbody>
         </table>
     </div>

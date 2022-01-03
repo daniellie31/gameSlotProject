@@ -32,8 +32,8 @@
                                 class="sr-only">(current)</span></a>
                     </li>
                     <form class="form-inline my-2 my-lg-0" method="get" action="/search">
-                        <input class="form-control mr-sm-2" style="width: 500px; margin-left:100px" type="search" placeholder="Search"
-                            aria-label="Search" name="keyword">
+                        <input class="form-control mr-sm-2" style="width: 500px; margin-left:100px" type="search"
+                            placeholder="Search" aria-label="Search" name="keyword">
                     </form>
 
                 </ul>
