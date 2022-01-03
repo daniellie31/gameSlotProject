@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\GenreController;
 use Illuminate\Support\Facades\Route;
@@ -17,13 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [GameController::class, 'showGames']);
 
-Route::get('/signIn',function(){
-    return view('signIn');
-});
+// Route::get('/signIn',function(){
+//     return view('signIn');
+// });
 
-Route::get('/signUp',function(){
-    return view('signUp');
-});
+// Route::get('/signUp',function(){
+//     return view('signUp');
+// });
 
 Route::get('/addGame', [GenreController::class, 'showAllGameGenre']);
 Route::get('/manageGameGenre', [GenreController::class, 'manageGameGenre']);
@@ -44,3 +46,9 @@ Route::get('/updateGameGenre/{id}',[GenreController::class,'viewGameGenre']);
 Route::post('/updateGameGenre/{id}',[GenreController::class,'editGameGenre']);
 
 Route::get('/search',[GameController::class,'search']);
+
+Route::get('/signIn',[LoginController::class,'index']);
+Route::post('/signIn',[LoginController::class,'authenticate']);
+
+Route::get('/signUp',[RegisterController::class,'index']);
+Route::post('/signUp',[RegisterController::class,'store']);
