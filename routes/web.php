@@ -24,7 +24,7 @@ Route::get('/manageGameGenre', [GenreController::class, 'manageGameGenre'])->mid
 
 Route::post('/add-game',[GameController::class,'insertGame']);
 
-Route::get('/manageGame',[GameController::class,'manageGame'])->middleware('auth');
+Route::get('/manageGame',[GameController::class,'manageGame'])->middleware('cekadmin');
 
 Route::delete('/delete-game/{id}',[GameController::class,'deleteGame']);
 
