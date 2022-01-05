@@ -23,6 +23,8 @@ Route::get('/', [GameController::class, 'showGames']);
 Route::get('/profile/{id}', [ProfileController::class, 'showProfile'])->middleware('auth');
 Route::post('/profile/{id}',[ProfileController::class,'updateProfile']);
 
+Route::post('/updatePassword/{id}', [ProfileController::class, 'updatePassword']);
+
 Route::get('/addGame', [GenreController::class, 'showAllGameGenre'])->middleware('cekadmin','auth');
 Route::get('/manageGameGenre', [GenreController::class, 'manageGameGenre'])->middleware('cekadmin','auth');
 

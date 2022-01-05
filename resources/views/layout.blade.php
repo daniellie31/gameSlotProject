@@ -52,14 +52,13 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    @if (Auth::user()->pictures == NULL)
-                                        <img class="rounded-img" src="{{ Storage::url('images/defaultAvatar.png') }}"
-                                            alt="image" style="width: 24px; height:24px;" />
+                                    @if (Auth::user()->pictures == null)
+                                        <img src="{{ Storage::url('images/defaultAvatar.png') }}" alt="image"
+                                            style="width: 24px; height:24px; clip-path: circle();" />
                                     @else
-                                    <img class="rounded-img" src="{{ Storage::url('images/'. Auth::user()->pictures) }}"
-                                    alt="image" style="width: 24px; height:24px;"/>
+                                        <img src="{{ Storage::url('images/' . Auth::user()->pictures) }}" alt="image"
+                                            style="width: 24px; height:24px; clip-path: circle();" />
                                     @endif
-
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
