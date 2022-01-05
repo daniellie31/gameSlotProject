@@ -26,9 +26,12 @@
                             @endif
                         </div>
                     </div>
-                    <div class="button-add-to-cart">
-                        <button type="button" class="btn btn-danger btn-lg">Add to Cart</button>
-                    </div>
+                    <form action="/add-to-cart" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="button-add-to-cart">
+                            <button type="button" class="btn btn-danger btn-lg">Add to Cart</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
