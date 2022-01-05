@@ -19,7 +19,7 @@
 
 <body class="bg-light" style="display: flex; flex-direction:column; min-height:100vh;">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white"
+        <nav class="navbar navbar-expand-lg navbar-light bg-white mr-auto ml-auto"
             style="box-shadow: 0 0 6px 0 rgba(100, 100, 100, 0.26);">
             <a class="navbar-brand" href="/"><img src="{{ Storage::url('images/GameSLot.png') }}" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -52,16 +52,24 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Profile Pict
+                                    @if (Auth::user()->pictures == NULL)
+                                        <img class="rounded-img" src="{{ Storage::url('images/defaultAvatar.png') }}"
+                                            alt="image" style="width: 24px; height:24px;" />
+                                    @else
+                                    <img class="rounded-img" src="{{ Storage::url('images/'. Auth::user()->pictures) }}"
+                                    alt="image" style="width: 24px; height:24px;"/>
+                                    @endif
+
                                 </a>
+
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Hi, <strong>{{ auth()->user()->name }}</strong></a>
+                                    <a class="dropdown-item">Hi, <strong>{{ auth()->user()->name }}</strong></a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Your Profile</a>
+                                    <a class="dropdown-item" href="/profile/{{ auth()->user()->id }}">Your Profile</a>
                                     <a class="dropdown-item" href="#">Transaction History</a>
                                     <form action="/signOut" method="POST">
                                         @csrf
-                                        <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>
+                                        <button type="submit" class="dropdown-item "><i class="fas fa-sign-out-alt"></i>
                                             <strong>Sign out</strong></button>
                                     </form>
                                 </div>

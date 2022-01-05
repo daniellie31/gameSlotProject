@@ -4,6 +4,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,21 +20,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [GameController::class, 'showGames']);
 
-Route::get('/addGame', [GenreController::class, 'showAllGameGenre'])->middleware('auth');
-Route::get('/manageGameGenre', [GenreController::class, 'manageGameGenre'])->middleware('auth');
+Route::get('/profile/{id}', [ProfileController::class, 'showProfile'])->middleware('auth');
+Route::post('/profile/{id}',[ProfileController::class,'updateProfile']);
+
+Route::get('/addGame', [GenreController::class, 'showAllGameGenre'])->middleware('cekadmin','auth');
+Route::get('/manageGameGenre', [GenreController::class, 'manageGameGenre'])->middleware('cekadmin','auth');
 
 Route::post('/add-game',[GameController::class,'insertGame']);
 
-Route::get('/manageGame',[GameController::class,'manageGame'])->middleware('cekadmin');
+Route::get('/manageGame',[GameController::class,'manageGame'])->middleware('cekadmin', 'auth');
 
 Route::delete('/delete-game/{id}',[GameController::class,'deleteGame']);
 
 Route::get('/details/{id}', [GameController::class,'viewDetails']);
 
-Route::get('/eGame/{id}',[GameController::class,'editGame'])->middleware('auth');
+Route::get('/eGame/{id}',[GameController::class,'editGame'])->middleware('cekadmin','auth');
 Route::post('/eGame/{id}',[GameController::class,'updateGame']);
 
-Route::get('/updateGameGenre/{id}',[GenreController::class,'viewGameGenre'])->middleware('auth');
+Route::get('/updateGameGenre/{id}',[GenreController::class,'viewGameGenre'])->middleware('cekadmin','auth');
 Route::post('/updateGameGenre/{id}',[GenreController::class,'editGameGenre']);
 
 Route::get('/search',[GameController::class,'search']);
