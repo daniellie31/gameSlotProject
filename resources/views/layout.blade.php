@@ -29,16 +29,17 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    @auth
+                    @role('admin')
                     <li class="nav-item">
                         <a class="nav-link" href="/manageGame">Manage Game <span
                                 class="sr-only">(current)</span></a>
                     </li>
+                   
                     <li class="nav-item">
                         <a class="nav-link" href="/manageGameGenre">Manage Game Genre <span
                                 class="sr-only">(current)</span></a>
                     </li>
-                    @endauth
+                    @endrole
 
                     <form class="form-inline my-2 my-lg-0" method="get" action="/search">
                         <input class="form-control mr-sm-2" style="width: 500px; margin-left:100px" type="search"
