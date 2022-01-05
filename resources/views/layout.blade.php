@@ -29,7 +29,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    @role('admin')
+                   @auth
                     <li class="nav-item">
                         <a class="nav-link" href="/manageGame">Manage Game <span
                                 class="sr-only">(current)</span></a>
@@ -39,7 +39,7 @@
                         <a class="nav-link" href="/manageGameGenre">Manage Game Genre <span
                                 class="sr-only">(current)</span></a>
                     </li>
-                    @endrole
+                    @endauth
 
                     <form class="form-inline my-2 my-lg-0" method="get" action="/search">
                         <input class="form-control mr-sm-2" style="width: 500px; margin-left:100px" type="search"
@@ -48,7 +48,6 @@
 
                     <ul class="navbar-nav">
                         @auth
-                            <a href="/cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

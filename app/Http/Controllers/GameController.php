@@ -9,10 +9,15 @@ use Illuminate\Support\Facades\Storage;
 
 class GameController extends Controller
 {
+
     public function search(Request $request){
         $keyword = $request->keyword;
+
         $games = Game::where('GameTitle', 'LIKE' ,"%$keyword%")->paginate(5)->appends(['keyword' => $keyword]);
+
+        
         return view('home', compact('games'));
+
     }
 
     public function showGames()

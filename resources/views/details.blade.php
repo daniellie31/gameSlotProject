@@ -2,9 +2,7 @@
 @section('title', 'Game Details')
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/details.css') }}">
-    @if (session('message'))
-        {{session('message')}}
-    @endif
+
     <div class="background-container">
         <div class="content bg-white">
             <h1 class="game-detail-title">{{ $games->GameTitle }}</h1>
@@ -28,12 +26,9 @@
                             @endif
                         </div>
                     </div>
-                    <form action="/add-to-cart" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="button-add-to-cart">
-                            <button type="button" class="btn btn-danger btn-lg">Add to Cart</button>
-                        </div>
-                    </form>
+                    <div class="button-add-to-cart">
+                        <button type="button" class="btn btn-danger btn-lg">Add to Cart</button>
+                    </div>
                 </div>
             </div>
         </div>
