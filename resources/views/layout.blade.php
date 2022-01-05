@@ -17,7 +17,6 @@
 
 </head>
 
-
 <body class="bg-light" style="display: flex; flex-direction:column; min-height:100vh;">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-white"
@@ -30,31 +29,24 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    
-                  @auth
-
-                    @if(Auth::user()->isadmin == true )
-                     <li class="nav-item">
-                     <a class="nav-link" href="/manageGame">Manage Game <span
-                            class="sr-only">(current)</span></a>
-                      </li>
-               
-                       <li class="nav-item">
-                        <a class="nav-link" href="/manageGameGenre">Manage Game Genre <span
-                            class="sr-only">(current)</span></a>
-                    </li>   
-                      @endif
-                  @endauth
-                   
-
-                  
+                    @auth
+                        @if (Auth::user()->isadmin == true)
+                            <li class="nav-item">
+                                <a class="nav-link" href="/manageGame">Manage Game <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/manageGameGenre">Manage Game Genre <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                        @endif
+                    @endauth
 
                     <form class="form-inline my-2 my-lg-0" method="get" action="/search">
                         <input class="form-control mr-sm-2" style="width: 500px; margin-left:100px" type="search"
                             placeholder="Search" aria-label="Search" name="keyword">
                     </form>
-                    
-                    
+
                     <ul class="navbar-nav">
                         @auth
                             <li class="nav-item dropdown">
@@ -69,7 +61,8 @@
                                     <a class="dropdown-item" href="#">Transaction History</a>
                                     <form action="/signOut" method="POST">
                                         @csrf
-                                        <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> <strong>Sign out</strong></button>
+                                        <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>
+                                            <strong>Sign out</strong></button>
                                     </form>
                                 </div>
                             </li>
