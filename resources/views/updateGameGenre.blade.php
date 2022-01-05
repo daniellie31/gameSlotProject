@@ -17,7 +17,7 @@
 
                     <tr>
                         <td colspan="2"></td>
-                        <td align="right"><button class="btn btn-danger" type="submit">Update</button></td>
+                        <td align ="right"><button class="btn btn-danger" type="submit">Update</button></td>
                     </tr>
                 </table>
             </form>

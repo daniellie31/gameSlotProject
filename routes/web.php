@@ -21,21 +21,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [GameController::class, 'showGames']);
 
-Route::get('/addGame', [GenreController::class, 'showAllGameGenre'])->middleware('auth');
-Route::get('/manageGameGenre', [GenreController::class, 'manageGameGenre'])->middleware('auth');
+Route::get('/addGame', [GenreController::class, 'showAllGameGenre'])->middleware('role:admin');
+Route::get('/manageGameGenre', [GenreController::class, 'manageGameGenre'])->middleware('role:admin');
 
 Route::post('/add-game',[GameController::class,'insertGame']);
 
-Route::get('/manageGame',[GameController::class,'manageGame'])->middleware('auth');
+Route::get('/manageGame',[GameController::class,'manageGame'])->middleware('role:admin');
 
 Route::delete('/delete-game/{id}',[GameController::class,'deleteGame']);
 
 Route::get('/details/{id}', [GameController::class,'viewDetails']);
 
-Route::get('/eGame/{id}',[GameController::class,'editGame'])->middleware('auth');
+Route::get('/eGame/{id}',[GameController::class,'editGame'])->middleware('role:admin');
 Route::post('/eGame/{id}',[GameController::class,'updateGame']);
 
-Route::get('/updateGameGenre/{id}',[GenreController::class,'viewGameGenre'])->middleware('auth');
+Route::get('/updateGameGenre/{id}',[GenreController::class,'viewGameGenre'])->middleware('role:admin');
 Route::post('/updateGameGenre/{id}',[GenreController::class,'editGameGenre']);
 
 Route::get('/search',[GameController::class,'search']);

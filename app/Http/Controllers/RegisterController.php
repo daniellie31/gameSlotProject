@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
+
 class RegisterController extends Controller
 {
     public function sign_up()
@@ -21,11 +22,13 @@ class RegisterController extends Controller
             'email' => 'required|unique:users|email',
             'password' => 'required',
             'gender' => 'required|in:male,female',
-            'dob' => 'required|before:today'
+            'dob' => 'required|before:-13 years'
         ]);
 
         $validated['password'] = Hash::make($validated['password']);
-        User::create($validated);
+        
+         $users = User::create($validated);
+         $users->assignRole('user');
 
         $request->session()->flash('success', 'Registrasi berhasil ! silahkan Sign In');
         return redirect('signIn');
