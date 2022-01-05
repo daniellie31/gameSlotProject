@@ -31,17 +31,21 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     
-                  
-                    <li class="nav-item">
-                        <a class="nav-link" href="/manageGame">Manage Game <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                   
-                    <li class="nav-item">
+                  @auth
+
+                    @if(Auth::user()->isadmin == true )
+                     <li class="nav-item">
+                     <a class="nav-link" href="/manageGame">Manage Game <span
+                            class="sr-only">(current)</span></a>
+                      </li>
+               
+                       <li class="nav-item">
                         <a class="nav-link" href="/manageGameGenre">Manage Game Genre <span
-                                class="sr-only">(current)</span></a>
+                            class="sr-only">(current)</span></a>
                     </li>   
-              
+                      @endif
+                  @endauth
+                   
 
                   
 
