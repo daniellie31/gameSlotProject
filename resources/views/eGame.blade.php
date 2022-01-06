@@ -30,13 +30,23 @@
                         <td colspan="2">Game Genre</td>
                         {{-- <td><input type="text" name="title" id="" placeholder="Input Title"></td> --}}
                         <td>
-                            <select id="genre-option" style="width: 100%" name="GenreId">
-                                <option value="NewGenre">Add New Genre</option>
+                            <select id="genre-option" style="width: 100%" name="GenreId" onchange="showDiv('hidden',this)">
+                                <option value="0" >Add New Genre</option>
                                 @foreach ($genres as $g)
-                                    <option value="{{ $g->id }}">{{ $g->GameGenre }}</option>
+                                    <option value="{{ $g->id }}" selected>{{ $g->GameGenre }}</option>
                                 @endforeach
                             </select>
                         </td>
+                            <td>
+                                <input type="text" style="display:none" id="hidden" placeholder="new genre name" name="genrename">
+                            </td>
+
+                    <script>
+                        function showDiv(hidden, element){
+                            document.getElementById(hidden).style.display = element.value == 0 ? 'block' : 'none';
+                        }
+                    </script>   
+                      
                     </tr>
                     <tr>
                         <td colspan="2">PEGI Rating</td>

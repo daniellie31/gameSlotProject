@@ -86,7 +86,16 @@ class GameController extends Controller
         $games->GameTitle = $request->GameTitle != null ? $request->GameTitle : $games->GameTitle;
         $games->GameDesc = $request->GameDesc != null ? $request->GameDesc :  $games->GameDesc;
         $games->GamePrice = $request->GamePrice != null ? $request->GamePrice : $games->GamePrice;
-        $games->GenreId = $request->GenreId;
+        if($request->GenreId == 0){
+            $genres = new Genre();
+            $genres->GameGenre = $request->genrename;
+            $genres->save();
+            $games->GenreId = $genres->id;
+
+        }else{
+            $games->GenreId = $request->GenreId;
+        }
+    
         $games->GamePegiRating = $request->GamePegiRating;
         $file = $request->file('GameImage');
 
