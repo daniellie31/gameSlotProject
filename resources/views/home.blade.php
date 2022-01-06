@@ -4,6 +4,14 @@
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 
+    @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
     <div class="row m-2 d-flex justify-content-center">
         @foreach ($games as $g)
             <div class="col col-sm-2 mt-3" style="max-width: 600px">

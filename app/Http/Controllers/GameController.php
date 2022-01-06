@@ -15,7 +15,7 @@ class GameController extends Controller
 
         $games = Game::where('GameTitle', 'LIKE' ,"%$keyword%")->paginate(5)->appends(['keyword' => $keyword]);
 
-        
+
         return view('home', compact('games'));
 
     }
@@ -54,7 +54,8 @@ class GameController extends Controller
         $games->GameImage = $imageName;
         $games->save();
 
-        return redirect()->back();
+        // return redirect()->back();
+        return redirect('/')->with('success', 'Game berhasil ditambahkan!');
     }
 
     public function manageGame()
