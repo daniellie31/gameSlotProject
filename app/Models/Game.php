@@ -17,4 +17,5 @@ class Game extends Model
     public function transactionDetails(){
         return $this->hasMany(TransactionDetails::class);
     }
+    
 }

@@ -16,6 +16,6 @@ class Cart extends Model
     }
 
     public function game(){
-        return $this->hasMany(Game::class, 'GameId', 'GameId');
+        return $this->hasMany(Game::class, 'GameId');
     }
 }
