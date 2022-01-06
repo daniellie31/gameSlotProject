@@ -11,7 +11,8 @@
                 <table class="table table-borderless">
                     <tr>
                         <td colspan="2">Game Title</td>
-                        <td><input type="text" name="GameTitle" id="" style="width: 100%" placeholder="{{ $games->GameTitle }}"></td>
+                        <td><input type="text" name="GameTitle" id="" style="width: 100%"
+                                placeholder="{{ $games->GameTitle }}"></td>
                     </tr>
                     <tr>
                         <td colspan="2">Photo</td>
@@ -20,33 +21,37 @@
                     <tr>
                         <td colspan="2">Description</td>
                         {{-- <td><textarea name="GameDesc" form="usrform" style="width: 100%"></textarea></td> --}}
-                        <td><input type="text" name="GameDesc" id="" style="width: 100%" placeholder="{{$games->GameDesc}}"></td>
+                        <td><input type="text" name="GameDesc" id="" style="width: 100%"
+                                placeholder="{{ $games->GameDesc }}"></td>
                     </tr>
                     <tr>
                         <td colspan="2">Game Price</td>
-                        <td><input type="text" name="GamePrice" id="" style="width: 100%" placeholder="{{$games->GamePrice}}"></td>
+                        <td><input type="text" name="GamePrice" id="" style="width: 100%"
+                                placeholder="{{ $games->GamePrice }}"></td>
                     </tr>
                     <tr>
                         <td colspan="2">Game Genre</td>
                         {{-- <td><input type="text" name="title" id="" placeholder="Input Title"></td> --}}
                         <td>
                             <select id="genre-option" style="width: 100%" name="GenreId" onchange="showDiv('hidden',this)">
-                                <option value="0" >Add New Genre</option>
+                                <option value="0">Add New Genre</option>
                                 @foreach ($genres as $g)
                                     <option value="{{ $g->id }}" selected>{{ $g->GameGenre }}</option>
                                 @endforeach
                             </select>
                         </td>
-                            <td>
-                                <input type="text" style="display:none" id="hidden" placeholder="new genre name" name="genrename">
-                            </td>
-
-                    <script>
-                        function showDiv(hidden, element){
-                            document.getElementById(hidden).style.display = element.value == 0 ? 'block' : 'none';
-                        }
-                    </script>   
-                      
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td>
+                            <input type="text" id="hidden" style="display: none;"
+                                name="genrename" placeholder="New Game Genre">
+                        </td>
+                        <script>
+                            function showDiv(hidden, element) {
+                                document.getElementById(hidden).style.display = element.value == 0 ? 'block' : 'none';
+                            }
+                        </script>
                     </tr>
                     <tr>
                         <td colspan="2">PEGI Rating</td>
