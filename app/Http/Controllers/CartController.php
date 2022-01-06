@@ -16,7 +16,7 @@ class CartController extends Controller
 
     public function addToCart(Request $request){
         Cart::create([
-            'GameId' => $request->gameId,
+            'GameId' => $request->GameId,
             'UserId' => Auth::user()->id,
             'Qty'=> 1
         ]);

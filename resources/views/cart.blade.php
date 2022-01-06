@@ -30,13 +30,12 @@
             @else
                 @foreach ($carts as $c)
                     <tr>
-                        {{-- <td>
-                            <img class="game-logo" src="{{ Storage::url('images/' . $c->games->GameTitle) }}"
-                                alt="image" /> {{ $c->games->GameTitle }}
-                        </td> --}}
+                        <td>
+                            <img class="game-logo" src="{{ Storage::url('images/' . $c->game->GameImage) }}"
+                                alt="image" /> {{ $c->game->GameTitle }}
+                        </td>
 
-                        {{-- <td style="vertical-align: middle">{{ $c->games->GameTitle }}</td> --}}
-                        <td style="vertical-align: middle">{{ $c->GameId }}</td>
+                        <td style="vertical-align: middle">{{ $c->game->GamePrice }}</td>
                         <td style="vertical-align: middle">
                             <form action="" method="get">
                                 {{ csrf_field() }}

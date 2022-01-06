@@ -17,5 +17,9 @@ class Game extends Model
     public function transactionDetails(){
         return $this->hasMany(TransactionDetails::class);
     }
-    
+
+    // public function cart(){
+    //     return $this->hasMany(Cart::class);
+    // }
+
 }
