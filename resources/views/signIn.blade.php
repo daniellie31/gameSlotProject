@@ -30,7 +30,7 @@
             </div>
         @endif
         <label for="email">Email address</label>
-        <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email">
+        <input value="{{Cookie::get('email')}}" type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email">
         @error('email')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -38,7 +38,7 @@
         @enderror
 
         <label for="password">Password</label>
-        <input type="password" id="password" class="form-control @error('email') is-invalid @enderror" name="password">
+        <input value="{{Cookie::get('password')}}" type="password" id="password" class="form-control @error('email') is-invalid @enderror" name="password">
         @error('password')
             <div class="invalid-feedback">
                 {{ $message }}
