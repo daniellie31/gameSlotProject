@@ -19,7 +19,7 @@
 
 <body class="bg-light" style="display: flex; flex-direction:column; min-height:100vh;">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white mr-auto ml-auto"
+        <nav class="navbar navbar-expand-lg navbar-light bg-white"
             style="box-shadow: 0 0 6px 0 rgba(100, 100, 100, 0.26);">
             <a class="navbar-brand" href="/"><img src="{{ Storage::url('images/GameSLot.png') }}" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -28,7 +28,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav w-100">
                     @auth
                         @if (Auth::user()->isadmin == true)
                             <li class="nav-item">

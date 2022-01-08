@@ -45,6 +45,10 @@
             </div>
         @enderror
 
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" name="RememberMe">
+            <label class="form-check-label">Remember me</label>
+        </div>
 
         <button class="btn btn-lg btn-danger btn-block" type="submit">Sign in</button>
     </form>
