@@ -22,7 +22,7 @@
                             @if ($games->GamePrice == 0)
                                 <p class="card-text text-center">Free</p>
                             @else
-                                <p class="card-text text-center">${{ $games->GamePrice }}</p>
+                                <p class="card-text text-center"> @currency($games->GamePrice)</p>
                             @endif
                         </div>
                     </div>
