@@ -30,7 +30,6 @@
                     </tr>
                     <tr>
                         <td colspan="2">Description</td>
-                        {{-- <td><textarea name="GameDesc" form="usrform" style="width: 100%"></textarea></td> --}}
                         <td><input type="text" name="GameDesc" id="" style="width: 100%"></td>
                     </tr>
                     <tr>
@@ -39,7 +38,6 @@
                     </tr>
                     <tr>
                         <td colspan="2">Game Genre</td>
-                        {{-- <td><input type="text" name="title" id="" placeholder="Input Title"></td> --}}
                         <td>
                             <select id="genre-option" style="width: 100%" name="GenreId">
                                 @foreach ($genres as $g)
@@ -50,7 +48,6 @@
                     </tr>
                     <tr>
                         <td colspan="2">PEGI Rating</td>
-                        {{-- <td><input type="text" name="title" id="" placeholder="Input Title"></td> --}}
                         <td>
                             <select id="rating" style="width: 100%" name="GamePegiRating">
                                 <option value="0">0</option>

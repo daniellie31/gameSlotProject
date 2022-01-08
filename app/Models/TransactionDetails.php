@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class TransactionDetails extends Model
 {
     use HasFactory;
-    protected $fillable = ['TransactionId','GameId', 'Qty'];
+    protected $fillable = ['transaction_id','GameId', 'Qty'];
 
     public function transaction(){
-        return $this->hasOne(Transaction::class, 'TransactionId');
+        return $this->belongsTo(Transaction::class, 'transaction_id', 'id');
     }
 
     public function game(){

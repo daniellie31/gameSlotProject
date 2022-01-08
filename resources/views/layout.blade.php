@@ -71,7 +71,7 @@
                                 <a class="dropdown-item">Hi, <strong>{{ auth()->user()->name }}</strong></a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/profile/{{ auth()->user()->id }}">Your Profile</a>
-                                <a class="dropdown-item" href="#">Transaction History</a>
+                                <a class="dropdown-item" href="/transaction">Transaction History</a>
                                 <form action="/signOut" method="POST">
                                     @csrf
                                     <button type="submit" class="dropdown-item "><i class="fas fa-sign-out-alt"></i>

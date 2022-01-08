@@ -9,16 +9,6 @@
         <h3 class="h3 mb-3 font-weight-bold" style="margin-top: 30px;">Sign in to your account</h3>
     </div>
 
-
-
-    @if (session()->has('failed'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            {{ session('failed') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
-
-
     <form class="form-signin card" action="/signIn" method="post">
         @csrf
         @if (session()->has('success'))
@@ -29,8 +19,19 @@
                 </button>
             </div>
         @endif
+        
+        @if (session()->has('failed'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('failed') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
+
         <label for="email">Email address</label>
-        <input value="{{Cookie::get('email')}}" type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email">
+        <input value="{{ Cookie::get('email') }}" type="email" id="email"
+            class="form-control @error('email') is-invalid @enderror" name="email">
         @error('email')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -38,7 +39,8 @@
         @enderror
 
         <label for="password">Password</label>
-        <input value="{{Cookie::get('password')}}" type="password" id="password" class="form-control @error('email') is-invalid @enderror" name="password">
+        <input value="{{ Cookie::get('password') }}" type="password" id="password"
+            class="form-control @error('email') is-invalid @enderror" name="password">
         @error('password')
             <div class="invalid-feedback">
                 {{ $message }}

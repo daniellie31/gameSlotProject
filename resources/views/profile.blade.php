@@ -21,7 +21,6 @@
                     </tr>
                     <tr>
                         <td colspan="2">Email</td>
-                        {{-- <td><textarea name="GameDesc" form="usrform" style="width: 100%"></textarea></td> --}}
                         <td><input type="email" name="email" id="" style="width: 100%" placeholder="{{ $users->email }}""></td>
                         </tr>
                         <tr>
@@ -75,10 +74,8 @@
                     </tr>
                     <tr>
                         <td colspan="2">Confirm New Password</td>
-                        {{-- <td><textarea name="GameDesc" form="usrform" style="width: 100%"></textarea></td> --}}
                         <td><input type="password" name="confirmNewPassword" id="password" style="width: 100%"></td>
                     </tr>
-
 
                     <tr>
                         <td colspan="2"></td>

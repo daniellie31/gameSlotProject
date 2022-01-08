@@ -20,29 +20,28 @@ class CartController extends Controller
         return view('cart', compact('carts'));
     }
 
-    public function addToCart(Request $request){
-
-       $cart = Cart::where([
-           ['GameId',$request->GameId], 
+    public function addToCart(Request $request)
+    {
+        $cart = Cart::where([
+           ['GameId',$request->GameId],
             ['UserId', Auth::user()->id]
        ])->first();
 
-       if($cart == null ){
-  
-
-        Cart::create([
+        if ($cart == null) {
+            Cart::create([
             'GameId' => $request->GameId,
             'UserId' => auth()->user()->id,
             'Qty' => 1
         ]);
-       }else{
-           $cart->Qty += 1;
-           $cart->save();
-       }
-       return redirect('/cart');
-    }                                  
+        } else {
+            $cart->Qty += 1;
+            $cart->save();
+        }
+        return redirect('/cart');
+    }
 
-    public function update(Request $req,$id){
+    public function update(Request $req, $id)
+    {
         $cart = Cart::find($id);
         $cart->Qty = $req->Qty;
         $cart->save();
@@ -50,37 +49,47 @@ class CartController extends Controller
     }
 
 
-    public function deleteCart($id){
+    public function deleteCart($id)
+    {
         $cart = Cart::find($id);
         $cart->delete();
-       return redirect('/cart');
+        return redirect('/cart');
     }
 
-    public function checkout(){
+    public function checkout()
+    {
         $cart = Cart::where([
              ['UserId', Auth::user()->id]
         ])->get();
 
-        $transaction_history = Transaction::create([
-           'UserId' => $cart->first()->UserId,
-           'TransactionDate' => date('Y-m-d H:i:s')
-        ]);
+        $carts = Cart::where([
+             ['UserId', Auth::user()->id]
+        ])->first();
 
-        foreach ($cart as $key ) {
-            TransactionDetails::create([
-                'TransactionId' => $transaction_history->id,
-                'GameId' => $key->GameId,
-                'Qty' => $key->Qty
+        // dd($carts);
+        if($carts == NULL){
+            return redirect('/cart')->with('failed', 'Cart Kosong!');
+        }
+        else{
+            $transaction_history = Transaction::create([
+               'UserId' => $cart->first()->UserId,
+               'TransactionDate' => date('Y-m-d H:i:s')
             ]);
+
+            foreach ($cart as $key) {
+                TransactionDetails::create([
+                    'transaction_id' => $transaction_history->id,
+                    'GameId' => $key->GameId,
+                    'Qty' => $key->Qty
+                ]);
+            }
+
+            Cart::where([
+                ['UserId', Auth::user()->id]
+             ])->delete();
+
+            return redirect('/transaction');
         }
 
-        Cart::where([
-            ['UserId', Auth::user()->id]
-         ])->delete();
-        
-        return redirect('/cart');
-    }
-
-
-
+   }
 }

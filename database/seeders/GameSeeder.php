@@ -17,7 +17,7 @@ class GameSeeder extends Seeder
         DB::table('games')->insert([
             'GenreId' => 1,
             'GameTitle' => 'Battlefield 1',
-            'GameImage' => 'battlefield.jpg',
+            'GameImage' => 'battlefield.png',
             'GameDesc' => 'Battlefield™ 1 takes you back to The Great War, WW1, where new technology and worldwide conflict changed the face of warfare forever.',
             'GamePrice' => 0,
             'GamePegiRating' => 18
@@ -49,7 +49,7 @@ class GameSeeder extends Seeder
         DB::table('games')->insert([
             'GenreId' => 5,
             'GameTitle' => 'Raft',
-            'GameImage' => 'raft.jpg',
+            'GameImage' => 'raft.png',
             'GameDesc' => 'Raft throws you and your friends into an epic oceanic adventure! Alone or together, players battle to survive a perilous voyage across a vast sea! Gather debris, scavenge reefs and build your own floating home, but be wary of the man-eating sharks!',
             'GamePrice' => 175,
             'GamePegiRating' => 3
@@ -65,7 +65,7 @@ class GameSeeder extends Seeder
         DB::table('games')->insert([
             'GenreId' => 7,
             'GameTitle' => 'Fortnite',
-            'GameImage' => 'fortnite.png',
+            'GameImage' => 'fortnite.jpg',
             'GameDesc' => "Fortnite is a survival game where 100 players fight against each other in player versus player combat to be the last one standing. It is a fast-paced, action-packed game, not unlike The Hunger Games, where strategic thinking is a must in order to survive.",
             'GamePrice' => 30,
             'GamePegiRating' => 16
@@ -121,7 +121,7 @@ class GameSeeder extends Seeder
         DB::table('games')->insert([
             'GenreId' => 1,
             'GameTitle' => "Counter Strike: Global Offensive",
-            'GameImage' => 'csgo.jpg',
+            'GameImage' => 'csgo.png',
             'GameDesc' => "Counter-Strike: Global Offensive (CS:GO) is a multiplayer first-person shooter developed by Valve and Hidden Path Entertainment. It is the fourth game in the Counter-Strike series. ... The game pits two teams, Terrorists and Counter-Terrorists, against each other in different objective-based game modes.",
             'GamePrice' => 10,
             'GamePegiRating' => 18

@@ -22,12 +22,12 @@
                             @if ($games->GamePrice == 0)
                                 <p class="card-text text-center">Free</p>
                             @else
-                                <p class="card-text text-center"> @currency($games->GamePrice)</p>
+                                <p class="card-text text-center">${{number_format($games->GamePrice)}}</p>
                             @endif
                         </div>
                     </div>
                     <form action="/add-to-cart" method="post" enctype="multipart/form-data">
-                        
+
                         @csrf
                         <div class="button-add-to-cart">
                             <input type="hidden" value="{{$games->id}}" name="GameId">

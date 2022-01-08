@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TransactionController;
 use App\Models\Cart;
 use Illuminate\Support\Facades\Route;
 
@@ -64,4 +65,5 @@ Route::delete('/delete-cart/{id}',[CartController::class,'deleteCart']);
 
 Route::post('/checkout',[CartController::class,'checkout']);
 
-
+Route::get('/transaction',[TransactionController::class,'viewTransaction'])->middleware('auth');
+Route::get('/transactionDetail/{id}',[TransactionController::class,'viewTransactionDetail'])->middleware('auth');

@@ -34,7 +34,7 @@
                             </td>
                             <td style="vertical-align: middle">{{ $g->GamePegiRating }}</td>
                             <td style="vertical-align: middle">{{ $g->genres->GameGenre }}</td>
-                            <td style="vertical-align: middle"> @currency($g->GamePrice) </td>
+                            <td style="vertical-align: middle">${{number_format($g->GamePrice)}} </td>
                             <td style="vertical-align: middle">
                                 <form action="/eGame/{{ $g->id }}" method="get">
                                     {{ csrf_field() }}
