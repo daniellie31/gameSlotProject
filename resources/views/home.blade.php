@@ -12,7 +12,7 @@
                 </button>
             </div>
         @endif
-    <div class="row m-2 d-flex justify-content-center">
+    <div class="row m-2 d-flex mt-4 justify-content-center">
         @foreach ($games as $g)
             <div class="col col-sm-2" style="max-width: 600px; margin:10px;">
                 <div class="card bg-white mb-3 border">

@@ -18,7 +18,7 @@ class cekadmin
     {
         if( $request->user()->isadmin == false ){
             return redirect('/');
-         }
+        }
 
         return $next($request);
     }
