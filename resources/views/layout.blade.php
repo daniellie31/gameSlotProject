@@ -11,13 +11,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    {{-- Icon  --}}
     <script src="https://kit.fontawesome.com/c2dd79deb8.js" crossorigin="anonymous"></script>
+
+    {{-- Font  --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
     <title>@yield('title') - GameSLot</title>
     <link rel="icon" href="{{ Storage::url('images/GS.png') }}">
 
 </head>
 
-<body class="bg-light" style="padding-bottom: 70px;">
+<body class="bg-light" style="padding-bottom: 70px; font-family: 'Poppins', sans-serif;">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light"
             style="background-color: white; box-shadow: 0 0 6px 0 rgba(100, 100, 100, 0.26);">
