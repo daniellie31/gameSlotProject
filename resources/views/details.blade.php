@@ -27,11 +27,13 @@
                         </div>
                     </div>
                     <form action="/add-to-cart" method="post" enctype="multipart/form-data">
+                        
                         @csrf
                         <div class="button-add-to-cart">
                             <input type="hidden" value="{{$games->id}}" name="GameId">
                             <button type="submit" class="btn btn-danger btn-lg">Add to Cart</button>
                         </div>
+
                     </form>
                 </div>
             </div>

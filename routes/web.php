@@ -54,4 +54,4 @@ Route::get('/signUp',[RegisterController::class,'sign_up'])->middleware('guest')
 Route::post('/signUp',[RegisterController::class,'store']);
 
 Route::get('/cart',[CartController::class,'viewCart'])->middleware('auth');
-Route::post('/add-to-cart',[CartController::class,'addToCart']);
+Route::post('/add-to-cart',[CartController::class,'addToCart'])->middleware('auth');
