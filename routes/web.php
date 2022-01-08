@@ -56,8 +56,12 @@ Route::post('/signUp',[RegisterController::class,'store']);
 
 Route::get('/cart',[CartController::class,'viewCart'])->middleware('auth');
 Route::post('/add-to-cart',[CartController::class,'addToCart'])->middleware('auth');
-Route::post('/add-to-cart',[CartController::class,'addToCart']);
+
 
 Route::post('/cart/{id}',[CartController::class,'update']);
 
 Route::delete('/delete-cart/{id}',[CartController::class,'deleteCart']);
+
+Route::post('/checkout',[CartController::class,'checkout']);
+
+

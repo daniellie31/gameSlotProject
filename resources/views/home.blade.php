@@ -32,7 +32,7 @@
                                 @if ($g->GamePrice == 0)
                                     <p class="card-text text-center">Free</p>
                                 @else
-                                    <p class="card-text text-center"> @currency($g->GamePrice)</p>
+                                    <p class="card-text text-center">Rp.  {{ number_format($g->GamePrice) }}</p>
                                 @endif
                             </div>
                         </div>

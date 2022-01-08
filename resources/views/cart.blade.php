@@ -10,9 +10,12 @@
     @php
         $total =0;
     @endphp
-    <a href="/checkout">
-        <button type="button" class="btn btn-danger btn-sm float-right my-3">Checkout</button>
-    </a>
+    <form action="/checkout" method="post">
+        @csrf
+        <button type="submit" class="btn btn-danger btn-sm float-right my-3">Checkout</button>
+    </form>
+        
+    
 
     <table class="table bg-white" style="box-shadow: 0 0 6px 0 rgba(100, 100, 100, 0.26);">
         <thead>
@@ -44,7 +47,7 @@
 
                         <td style="vertical-align: middle"> @currency($c->game->GamePrice) </td>
                         <td style="vertical-align: middle">
-                            <form action="/cart/{{ $c->GameId }}" method="post">
+                            <form action="/cart/{{ $c->id }}" method="post">
                                 {{ csrf_field() }}
 
                                 <input type="text" name="Qty" value="{{ $c->Qty }}">
@@ -60,7 +63,7 @@
                         </td>
                             
                         <td style="vertical-align: middle">
-                            <form action="/delete-cart/{{ $c->GameId }}" method="post">
+                            <form action="/delete-cart/{{ $c->id}}" method="post">
                                 {{ method_field('delete') }}
                                 {{ csrf_field() }}
                                 <button type="submit" class="delete">Remove</button>
@@ -79,7 +82,7 @@
 
         </tbody>
     </table>
-    <h3>Item in cart  :  {{ $c->count();  }}</h3>
+    {{-- <h3>Item in cart  :  {{  }}</h3> --}}
     <h3> Total :@currency($total)</h3>
     @endif
 </div>
